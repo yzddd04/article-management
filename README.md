@@ -355,6 +355,3 @@ CREATE TABLE articles (
 4. Tambahkan test jika diperlukan
 5. Submit pull request
 
-## Lisensi
-
-Project ini open source dan tersedia di bawah [MIT License](LICENSE).
