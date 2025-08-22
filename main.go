@@ -15,47 +15,38 @@ import (
 )
 
 func main() {
-	// Load environment variables
 	if err := godotenv.Load(); err != nil {
-		log.Println("No .env file found, using default configuration")
+		log.Println("File .env tidak ditemukan, menggunakan konfigurasi default")
 	}
 
-	// Initialize database
 	db, err := config.InitDB()
 	if err != nil {
-		log.Fatal("Failed to connect to database:", err)
+		log.Fatal("Gagal koneksi ke database:", err)
 	}
 	defer db.Close()
 
-	// Auto migrate database
 	if err := models.MigrateDB(db); err != nil {
-		log.Fatal("Failed to migrate database:", err)
+		log.Fatal("Gagal migrasi database:", err)
 	}
 
-	// Set Gin mode
 	if os.Getenv("GIN_MODE") == "release" {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	// Initialize router
 	router := gin.Default()
 
-	// Add middleware
 	router.Use(middleware.Logger())
 	router.Use(middleware.CORS())
 
-	// Initialize handlers
 	articleHandler := handlers.NewArticleHandler(db)
 
-	// Setup routes
 	routes.SetupRoutes(router, articleHandler)
 
-	// Get port from environment or use default
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
 
-	log.Printf("Server starting on port %s", port)
+	log.Printf("Server berjalan di port %s", port)
 	log.Fatal(router.Run(":" + port))
 }

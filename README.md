@@ -1,17 +1,17 @@
-# Article CRUD API
+# API Artikel CRUD
 
-A modern, well-structured RESTful API for managing articles built with Go, Gin framework, and SQLite database.
+API RESTful modern untuk mengelola artikel yang dibangun dengan Go, framework Gin, dan database SQLite.
 
-## Features
+## Fitur
 
-- ✅ Complete CRUD operations for articles
-- ✅ RESTful API design
-- ✅ SQLite database with automatic migration
-- ✅ Input validation and error handling
-- ✅ CORS support
-- ✅ Request logging
-- ✅ Modern project structure
-- ✅ Ready for Postman testing
+- ✅ Operasi CRUD lengkap untuk artikel
+- ✅ Desain API RESTful
+- ✅ Database SQLite dengan migrasi otomatis
+- ✅ Validasi input dan penanganan error
+- ✅ Dukungan CORS
+- ✅ Logging request
+- ✅ Struktur project modern
+- ✅ Siap untuk testing di Postman
 
 ## Project Structure
 
@@ -33,16 +33,16 @@ article-crud-api/
     └── routes.go          # API routes configuration
 ```
 
-## Quick Start
+## Cara Cepat Memulai
 
-### Prerequisites
+### Persyaratan
 
-- Go 1.21 or higher
+- Go 1.21 atau lebih tinggi
 - Git
 
-### Installation
+### Instalasi
 
-1. Clone the repository:
+1. Clone repository:
 ```bash
 git clone <repository-url>
 cd article-crud-api
@@ -53,17 +53,17 @@ cd article-crud-api
 go mod tidy
 ```
 
-3. Create environment file:
+3. Buat file environment:
 ```bash
 cp env.example .env
 ```
 
-4. Run the application:
+4. Jalankan aplikasi:
 ```bash
 go run main.go
 ```
 
-The server will start on `http://localhost:8080`
+Server akan berjalan di `http://localhost:8080`
 
 ## API Endpoints
 
@@ -74,60 +74,60 @@ http://localhost:8080
 
 ### Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Welcome message and API info |
-| GET | `/api/v1/health` | Health check |
-| GET | `/api/v1/articles` | Get all articles |
-| POST | `/api/v1/articles` | Create new article |
-| GET | `/api/v1/articles/:id` | Get article by ID |
-| PUT | `/api/v1/articles/:id` | Update article |
-| DELETE | `/api/v1/articles/:id` | Delete article |
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| GET | `/` | Pesan selamat datang dan info API |
+| GET | `/api/v1/health` | Pengecekan status |
+| GET | `/api/v1/articles` | Ambil semua artikel |
+| POST | `/api/v1/articles` | Buat artikel baru |
+| GET | `/api/v1/articles/:id` | Ambil artikel berdasarkan ID |
+| PUT | `/api/v1/articles/:id` | Update artikel |
+| DELETE | `/api/v1/articles/:id` | Hapus artikel |
 
-## API Documentation
+## Dokumentasi API
 
-### Article Model
+### Model Artikel
 
 ```json
 {
   "id": 1,
-  "title": "Article Title",
-  "content": "Article content...",
-  "author": "Author Name",
-  "category": "Technology",
+  "title": "Judul Artikel",
+  "content": "Konten artikel...",
+  "author": "Nama Penulis",
+  "category": "Teknologi",
   "published_at": "2024-01-01T00:00:00Z",
   "created_at": "2024-01-01T00:00:00Z",
   "updated_at": "2024-01-01T00:00:00Z"
 }
 ```
 
-### Response Format
+### Format Response
 
-All API responses follow this format:
+Semua response API mengikuti format ini:
 
 ```json
 {
   "success": true,
-  "message": "Operation completed successfully",
+  "message": "Operasi berhasil diselesaikan",
   "data": { ... },
   "error": null
 }
 ```
 
-### Error Response
+### Response Error
 
 ```json
 {
   "success": false,
   "message": null,
   "data": null,
-  "error": "Error description"
+  "error": "Deskripsi error"
 }
 ```
 
-## Testing with Postman
+## Testing dengan Postman
 
-### 1. Create Article (POST)
+### 1. Buat Artikel (POST)
 
 **URL:** `http://localhost:8080/api/v1/articles`
 
@@ -139,23 +139,23 @@ Content-Type: application/json
 **Body (raw JSON):**
 ```json
 {
-  "title": "Getting Started with Go",
-  "content": "Go is a powerful programming language...",
+  "title": "Memulai dengan Go",
+  "content": "Go adalah bahasa pemrograman yang powerful...",
   "author": "John Doe",
-  "category": "Programming",
+  "category": "Pemrograman",
   "published_at": "2024-01-01T00:00:00Z"
 }
 ```
 
-### 2. Get All Articles (GET)
+### 2. Ambil Semua Artikel (GET)
 
 **URL:** `http://localhost:8080/api/v1/articles`
 
-### 3. Get Article by ID (GET)
+### 3. Ambil Artikel berdasarkan ID (GET)
 
 **URL:** `http://localhost:8080/api/v1/articles/1`
 
-### 4. Update Article (PUT)
+### 4. Update Artikel (PUT)
 
 **URL:** `http://localhost:8080/api/v1/articles/1`
 
@@ -167,35 +167,35 @@ Content-Type: application/json
 **Body (raw JSON):**
 ```json
 {
-  "title": "Updated Title",
-  "content": "Updated content...",
+  "title": "Judul yang Diupdate",
+  "content": "Konten yang diupdate...",
   "author": "Jane Smith",
-  "category": "Technology",
+  "category": "Teknologi",
   "published_at": "2024-01-01T00:00:00Z"
 }
 ```
 
-### 5. Delete Article (DELETE)
+### 5. Hapus Artikel (DELETE)
 
 **URL:** `http://localhost:8080/api/v1/articles/1`
 
-### 6. Health Check (GET)
+### 6. Pengecekan Status (GET)
 
 **URL:** `http://localhost:8080/api/v1/health`
 
-## Postman Collection
+## Collection Postman
 
-You can import this collection into Postman for easy testing:
+Anda dapat mengimpor collection ini ke Postman untuk testing yang mudah:
 
 ```json
 {
   "info": {
-    "name": "Article CRUD API",
+    "name": "API Artikel CRUD",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Health Check",
+      "name": "Pengecekan Status",
       "request": {
         "method": "GET",
         "header": [],
@@ -209,7 +209,7 @@ You can import this collection into Postman for easy testing:
       }
     },
     {
-      "name": "Get All Articles",
+      "name": "Ambil Semua Artikel",
       "request": {
         "method": "GET",
         "header": [],
@@ -223,7 +223,7 @@ You can import this collection into Postman for easy testing:
       }
     },
     {
-      "name": "Create Article",
+      "name": "Buat Artikel",
       "request": {
         "method": "POST",
         "header": [
@@ -234,7 +234,7 @@ You can import this collection into Postman for easy testing:
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Getting Started with Go\",\n  \"content\": \"Go is a powerful programming language...\",\n  \"author\": \"John Doe\",\n  \"category\": \"Programming\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
+          "raw": "{\n  \"title\": \"Memulai dengan Go\",\n  \"content\": \"Go adalah bahasa pemrograman yang powerful...\",\n  \"author\": \"John Doe\",\n  \"category\": \"Pemrograman\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/v1/articles",
@@ -246,7 +246,7 @@ You can import this collection into Postman for easy testing:
       }
     },
     {
-      "name": "Get Article by ID",
+      "name": "Ambil Artikel berdasarkan ID",
       "request": {
         "method": "GET",
         "header": [],
@@ -260,7 +260,7 @@ You can import this collection into Postman for easy testing:
       }
     },
     {
-      "name": "Update Article",
+      "name": "Update Artikel",
       "request": {
         "method": "PUT",
         "header": [
@@ -271,7 +271,7 @@ You can import this collection into Postman for easy testing:
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Updated Title\",\n  \"content\": \"Updated content...\",\n  \"author\": \"Jane Smith\",\n  \"category\": \"Technology\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
+          "raw": "{\n  \"title\": \"Judul yang Diupdate\",\n  \"content\": \"Konten yang diupdate...\",\n  \"author\": \"Jane Smith\",\n  \"category\": \"Teknologi\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/v1/articles/1",
@@ -283,7 +283,7 @@ You can import this collection into Postman for easy testing:
       }
     },
     {
-      "name": "Delete Article",
+      "name": "Hapus Artikel",
       "request": {
         "method": "DELETE",
         "header": [],
@@ -300,29 +300,29 @@ You can import this collection into Postman for easy testing:
 }
 ```
 
-## Environment Variables
+## Variabel Environment
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | `8080` | Server port |
-| `GIN_MODE` | `debug` | Gin mode (debug/release) |
-| `DB_PATH` | `./articles.db` | SQLite database path |
+| Variable | Default | Deskripsi |
+|----------|---------|-----------|
+| `PORT` | `8080` | Port server |
+| `GIN_MODE` | `debug` | Mode Gin (debug/release) |
+| `DB_PATH` | `./articles.db` | Path database SQLite |
 
-## Development
+## Pengembangan
 
-### Running in Development Mode
+### Menjalankan dalam Mode Development
 
 ```bash
 go run main.go
 ```
 
-### Building for Production
+### Build untuk Production
 
 ```bash
 go build -o article-api main.go
 ```
 
-### Running Tests
+### Menjalankan Test
 
 ```bash
 go test ./...
@@ -330,9 +330,9 @@ go test ./...
 
 ## Database
 
-The application uses SQLite for simplicity. The database file (`articles.db`) will be created automatically when you first run the application.
+Aplikasi menggunakan SQLite untuk kemudahan. File database (`articles.db`) akan dibuat otomatis saat pertama kali menjalankan aplikasi.
 
-### Database Schema
+### Schema Database
 
 ```sql
 CREATE TABLE articles (
@@ -347,14 +347,14 @@ CREATE TABLE articles (
 );
 ```
 
-## Contributing
+## Kontribusi
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+1. Fork repository
+2. Buat feature branch
+3. Lakukan perubahan
+4. Tambahkan test jika diperlukan
+5. Submit pull request
 
-## License
+## Lisensi
 
-This project is open source and available under the [MIT License](LICENSE).
+Project ini open source dan tersedia di bawah [MIT License](LICENSE).

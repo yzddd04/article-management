@@ -6,35 +6,30 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// SetupRoutes configures all the routes for the application
 func SetupRoutes(router *gin.Engine, articleHandler *handlers.ArticleHandler) {
-	// API version 1
 	v1 := router.Group("/api/v1")
 	{
-		// Health check endpoint
 		v1.GET("/health", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"status":  "success",
-				"message": "Article CRUD API is running",
+				"message": "API Artikel CRUD berjalan",
 				"version": "1.0.0",
 			})
 		})
 
-		// Articles endpoints
 		articles := v1.Group("/articles")
 		{
-			articles.GET("", articleHandler.GetAllArticles)    // GET /api/v1/articles
-			articles.POST("", articleHandler.CreateArticle)    // POST /api/v1/articles
-			articles.GET("/:id", articleHandler.GetArticle)    // GET /api/v1/articles/:id
-			articles.PUT("/:id", articleHandler.UpdateArticle) // PUT /api/v1/articles/:id
-			articles.DELETE("/:id", articleHandler.DeleteArticle) // DELETE /api/v1/articles/:id
+			articles.GET("", articleHandler.GetAllArticles)
+			articles.POST("", articleHandler.CreateArticle)
+			articles.GET("/:id", articleHandler.GetArticle)
+			articles.PUT("/:id", articleHandler.UpdateArticle)
+			articles.DELETE("/:id", articleHandler.DeleteArticle)
 		}
 	}
 
-	// Root endpoint
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "Welcome to Article CRUD API",
+			"message": "Selamat datang di API Artikel CRUD",
 			"endpoints": gin.H{
 				"health": "/api/v1/health",
 				"articles": gin.H{

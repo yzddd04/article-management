@@ -1,12 +1,12 @@
 {
   "info": {
-    "name": "Article CRUD API",
-    "description": "Complete CRUD API for managing articles",
+    "name": "API Artikel CRUD",
+    "description": "API CRUD lengkap untuk mengelola artikel",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Health Check",
+      "name": "Pengecekan Status",
       "request": {
         "method": "GET",
         "header": [],
@@ -17,12 +17,12 @@
           "port": "8080",
           "path": ["api", "v1", "health"]
         },
-        "description": "Check if the API is running"
+        "description": "Periksa apakah API berjalan"
       },
       "response": []
     },
     {
-      "name": "Get All Articles",
+      "name": "Ambil Semua Artikel",
       "request": {
         "method": "GET",
         "header": [],
@@ -33,12 +33,12 @@
           "port": "8080",
           "path": ["api", "v1", "articles"]
         },
-        "description": "Retrieve all articles from the database"
+        "description": "Ambil semua artikel dari database"
       },
       "response": []
     },
     {
-      "name": "Create Article",
+      "name": "Buat Artikel",
       "request": {
         "method": "POST",
         "header": [
@@ -49,7 +49,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Getting Started with Go\",\n  \"content\": \"Go is a powerful programming language that makes it easy to build simple, reliable, and efficient software. It was developed by Google and has gained popularity for its simplicity and performance.\",\n  \"author\": \"John Doe\",\n  \"category\": \"Programming\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
+          "raw": "{\n  \"title\": \"Memulai dengan Go\",\n  \"content\": \"Go adalah bahasa pemrograman yang powerful untuk membuat software yang sederhana, reliable, dan efisien. Dikembangkan oleh Google dan populer karena kesederhanaan dan performanya.\",\n  \"author\": \"John Doe\",\n  \"category\": \"Pemrograman\",\n  \"published_at\": \"2024-01-01T00:00:00Z\"\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/v1/articles",
@@ -58,7 +58,7 @@
           "port": "8080",
           "path": ["api", "v1", "articles"]
         },
-        "description": "Create a new article"
+        "description": "Buat artikel baru"
       },
       "response": []
     },
