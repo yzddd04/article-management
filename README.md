@@ -1,5 +1,14 @@
 # API Artikel CRUD
 
+## Project Documentation 
+<img width="1919" height="1150" alt="Screenshot 2025-08-22 225838" src="https://github.com/user-attachments/assets/b00488fd-d054-470b-9e9a-72b199b5ca5b" />
+<img width="1919" height="1140" alt="Screenshot 2025-08-22 225953" src="https://github.com/user-attachments/assets/14b1b729-4f56-420c-9d74-441ad9ef61c1" />
+<img width="1916" height="1154" alt="Screenshot 2025-08-22 230033" src="https://github.com/user-attachments/assets/81a692ad-94cb-4150-b684-78e5a1fdd267" />
+<img width="1914" height="1140" alt="Screenshot 2025-08-22 230045" src="https://github.com/user-attachments/assets/841271e7-ee02-4e83-960e-3004272ccc8f" />
+<img width="1918" height="1142" alt="Screenshot 2025-08-22 230117" src="https://github.com/user-attachments/assets/d2fdad97-140a-48a8-b21c-b60e2b975cdc" />
+<img width="1919" height="1150" alt="Screenshot 2025-08-22 230131" src="https://github.com/user-attachments/assets/4c2b03c5-cfc7-4116-bede-4e072d65e00c" />
+
+
 API RESTful modern untuk mengelola artikel yang dibangun dengan Go, framework Gin, dan database SQLite.
 
 ## Fitur
